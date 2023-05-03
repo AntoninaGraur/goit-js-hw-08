@@ -25,10 +25,16 @@ form.addEventListener('submit', (event) => {
   const formData = {
     email: emailInput.value,
     message: messageInput.value,
+   
   };
+  /*при сабміті має виводитись об'єкт в консольку. */
+   console.log(formData);
+//  Також при сабміті можна було очищати форму методом reset, а не прописуючи вручну emailInput.value = '';
+  // emailInput.value = '';
+  // messageInput.value = '';
  
-  emailInput.value = '';
-  messageInput.value = '';
   localStorage.removeItem('feedback-form-state');
+  form.reset();
 });
+
 
